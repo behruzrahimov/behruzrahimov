@@ -1,0 +1,36 @@
+@use '@scss/abstracts' as *;
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: rem($font-size-base);
+	scroll-behavior: smooth;
+	min-width: rem(270px);
+}
+
+body {
+	background-color: var(--neutral--800);
+	color: var(--neutral--100);
+	font-family: $font-family-primary;
+}
+
+#root {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+p {
+	margin-bottom: 20px;
+	font-size: rem(16px);
+}
+
+a {
+	text-decoration: none;
+}

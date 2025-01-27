@@ -1,0 +1,62 @@
+@use 'sass:math';
+@use 'sass:color';
+
+@function rem($px) {
+	@return math.div($px, 16px) * 1rem;
+}
+
+@function darken-color($color, $amount) {
+	@return color.adjust($color, $lightness: -($amount * 1%));
+}
+
+@function lighten-color($color, $amount) {
+	@return color.adjust($color, $lightness: $amount * 1%);
+}
+
+@function fluid-type($min-size, $max-size, $min-vw: 320px, $max-vw: 1200px) {
+	$size-diff: $max-size - $min-size;
+	$vw-diff: $max-vw - $min-vw;
+
+	@return calc(
+		#{$min-size} + #{$size-diff} * ((100vw - #{$min-vw}) / #{$vw-diff})
+	);
+}
+
+@function respond-to($breakpoint) {
+	@if map-has-key($breakpoints, $breakpoint) {
+		$value: map-get($breakpoints, $breakpoint);
+		@return 'only screen and (min-width: #{$value})';
+	} @else {
+		@error "No value found for breakpoint: #{$breakpoint}";
+	}
+}
+
+@function spacing($value) {
+	$spacing-scale: (
+		0: 0,
+		1: 0.25rem,
+		2: 0.5rem,
+		3: 1rem,
+		4: 1.5rem,
+		5: 2rem,
+		6: 3rem,
+	);
+
+	@if map-has-key($spacing-scale, $value) {
+		@return map-get($spacing-scale, $value);
+	} @else {
+		@error "Invalid spacing value: #{$value}";
+	}
+}
+
+@function is-light($color) {
+	@return if(lightness($color) > 50, true, false);
+}
+
+@function hex-to-rgba($color, $alpha: 1) {
+	$red: red($color);
+	$green: green($color);
+	$blue: blue($color);
+
+	@return rgba($red, $green, $blue, $alpha);
+}

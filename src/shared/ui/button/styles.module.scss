@@ -1,0 +1,56 @@
+@use '@scss/abstracts' as *;
+
+.button {
+	cursor: pointer;
+	@include display-center();
+	gap: rem(12px);
+	padding: rem(16px) rem(28px);
+	border: none;
+	border-radius: rem(16px);
+	font-family: $font-family-primary;
+	font-size: $font-size-xl;
+	line-height: $line-height-2xl;
+	font-weight: 500;
+	text-align: center;
+	transition: all 0.1s linear;
+
+	&:disabled {
+		cursor: not-allowed;
+		background: var(--neutral--300, #e0e0e0);
+		color: var(--neutral--400, #a0a0a0);
+		@include hover-active(1, 1);
+	}
+}
+
+.loading {
+	animation: spin 1s linear infinite;
+	color: var(--neutral--100, #ffffff);
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.primary {
+	background: var(--neutral--600, #5d6c83);
+	color: var(--neutral--100, #fff);
+	@include hover-active();
+}
+
+.secondary {
+	background: transparent;
+	color: var(--neutral--100,);
+	@include hover-active();
+}
+
+.simple {
+	background-color: transparent;
+	color: var(--simple-button-color);
+	border: 1px solid var(--neutral--600);
+	@include hover-active();
+}
