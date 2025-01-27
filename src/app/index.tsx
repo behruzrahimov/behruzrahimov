@@ -7,6 +7,7 @@ import { Layout } from '../layout';
 export default function App() {
 	useEffect(() => {
 		const bodyClassList = document.body.classList;
+		bodyClassList.remove('theme-light', 'theme-dark');
 		bodyClassList.add(`theme-dark`);
 	}, []);
 
