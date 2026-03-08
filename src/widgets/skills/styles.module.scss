@@ -1,0 +1,165 @@
+@use '@scss/abstracts' as *;
+
+.skills {
+	padding: rem(100px) rem(24px);
+	position: relative;
+	background: linear-gradient(180deg, transparent, rgba(0, 212, 255, 0.02), transparent);
+
+	:global(.theme-light) & {
+		background: linear-gradient(180deg, transparent, rgba(0, 102, 255, 0.02), transparent);
+	}
+}
+
+.container {
+	max-width: rem(1200px);
+	margin: 0 auto;
+}
+
+.sectionHeader {
+	text-align: center;
+	margin-bottom: rem(48px);
+}
+
+.sectionTag {
+	font-family: 'JetBrains Mono', monospace;
+	font-size: rem(14px);
+	color: var(--accent--primary);
+	opacity: 0.8;
+	display: block;
+	margin-bottom: rem(12px);
+}
+
+.sectionTitle {
+	font-size: clamp(rem(32px), 5vw, rem(52px));
+	font-weight: 800;
+	color: var(--text--primary);
+	letter-spacing: -1.5px;
+}
+
+.gradientText {
+	background: var(--accent--gradient-text);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+.filters {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: rem(8px);
+	margin-bottom: rem(48px);
+}
+
+.filterBtn {
+	font-family: 'Inter', sans-serif;
+	font-size: rem(13px);
+	font-weight: 500;
+	color: var(--text--secondary);
+	background: var(--glass--bg);
+	border: 1px solid var(--glass--border);
+	padding: rem(8px) rem(18px);
+	border-radius: rem(100px);
+	cursor: pointer;
+	transition: all 0.2s ease;
+	backdrop-filter: blur(10px);
+
+	&:hover {
+		color: var(--cat-color, var(--accent--primary));
+		border-color: var(--cat-color, var(--accent--primary));
+	}
+
+	&.filterActive {
+		background: var(--accent--gradient);
+		color: #fff;
+		border-color: transparent;
+		box-shadow: 0 0 20px rgba(0, 212, 255, 0.25);
+	}
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: rem(24px);
+
+	@include respond-to('tablet') {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@include respond-to('mobile') {
+		grid-template-columns: 1fr;
+	}
+}
+
+.categoryCard {
+	background: var(--glass--bg);
+	backdrop-filter: blur(10px);
+	border: 1px solid var(--glass--border);
+	border-radius: rem(20px);
+	padding: rem(24px);
+	transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+	&:hover {
+		border-color: var(--cat-primary, var(--accent--primary));
+		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 212, 255, 0.1);
+	}
+}
+
+.categoryHeader {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: rem(20px);
+}
+
+.categoryTitle {
+	font-size: rem(16px);
+	font-weight: 700;
+	color: var(--cat-primary, var(--accent--primary));
+}
+
+.skillCount {
+	font-family: 'JetBrains Mono', monospace;
+	font-size: rem(12px);
+	color: var(--text--muted);
+	background: var(--cat-bg, rgba(0, 212, 255, 0.08));
+	padding: rem(3px) rem(8px);
+	border-radius: rem(100px);
+}
+
+.skillsGrid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: rem(8px);
+}
+
+.skillBadge {
+	display: inline-flex;
+	align-items: center;
+	gap: rem(6px);
+	font-size: rem(12px);
+	font-weight: 500;
+	color: var(--text--secondary);
+	background: var(--cat-bg, rgba(0, 212, 255, 0.05));
+	border: 1px solid rgba(255, 255, 255, 0.06);
+	padding: rem(5px) rem(10px);
+	border-radius: rem(8px);
+	cursor: default;
+	transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+
+	&:hover {
+		color: var(--cat-primary, var(--accent--primary));
+		border-color: var(--cat-primary, rgba(0, 212, 255, 0.3));
+		background: var(--cat-bg, rgba(0, 212, 255, 0.08));
+		box-shadow: 0 2px 10px rgba(0, 212, 255, 0.1);
+	}
+
+	:global(.theme-light) & {
+		border-color: rgba(0, 0, 0, 0.08);
+	}
+}
+
+.skillIcon {
+	color: var(--cat-primary, var(--accent--primary));
+	flex-shrink: 0;
+}

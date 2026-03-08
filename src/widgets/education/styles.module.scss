@@ -1,0 +1,320 @@
+@use '@scss/abstracts' as *;
+
+.education {
+	padding: rem(100px) rem(24px);
+	position: relative;
+}
+
+.container {
+	max-width: rem(1200px);
+	margin: 0 auto;
+}
+
+.sectionHeader {
+	text-align: center;
+	margin-bottom: rem(64px);
+}
+
+.sectionTag {
+	font-family: 'JetBrains Mono', monospace;
+	font-size: rem(14px);
+	color: var(--accent--primary);
+	opacity: 0.8;
+	display: block;
+	margin-bottom: rem(12px);
+}
+
+.sectionTitle {
+	font-size: clamp(rem(32px), 5vw, rem(52px));
+	font-weight: 800;
+	color: var(--text--primary);
+	letter-spacing: -1.5px;
+}
+
+.gradientText {
+	background: var(--accent--gradient-text);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: rem(40px);
+	align-items: start;
+
+	@include respond-to('mobile') {
+		grid-template-columns: 1fr;
+	}
+
+	@include respond-to('tablet') {
+		grid-template-columns: 1fr;
+	}
+}
+
+.column {
+	display: flex;
+	flex-direction: column;
+	gap: rem(20px);
+}
+
+.columnTitle {
+	display: flex;
+	align-items: center;
+	gap: rem(10px);
+	font-size: rem(14px);
+	font-weight: 700;
+	color: var(--text--secondary);
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	color: var(--accent--primary);
+}
+
+.columnTitleSpaced {
+	margin-top: rem(12px);
+}
+
+.eduCard {
+	position: relative;
+	background: var(--glass--bg);
+	backdrop-filter: blur(10px);
+	border: 1px solid var(--glass--border);
+	border-radius: rem(20px);
+	padding: rem(24px);
+	overflow: hidden;
+	transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+	&:hover {
+		border-color: var(--border--primary);
+		box-shadow: var(--shadow--glow);
+	}
+}
+
+.cardGlow {
+	position: absolute;
+	top: -50%;
+	left: -50%;
+	width: 200%;
+	height: 200%;
+	background: radial-gradient(circle at 20% 20%, rgba(0, 212, 255, 0.04) 0%, transparent 60%);
+	pointer-events: none;
+}
+
+.eduHeader {
+	display: flex;
+	align-items: flex-start;
+	gap: rem(14px);
+	margin-bottom: rem(16px);
+}
+
+.degreeIcon {
+	font-size: rem(32px);
+	flex-shrink: 0;
+}
+
+.degree {
+	font-size: rem(18px);
+	font-weight: 700;
+	color: var(--text--primary);
+	margin-bottom: rem(4px);
+}
+
+.institution {
+	font-size: rem(14px);
+	color: var(--accent--primary);
+	font-weight: 500;
+}
+
+.eduMeta {
+	display: flex;
+	gap: rem(16px);
+	flex-wrap: wrap;
+	margin-bottom: rem(20px);
+}
+
+.metaItem {
+	display: flex;
+	align-items: center;
+	gap: rem(5px);
+	font-size: rem(13px);
+	color: var(--text--muted);
+}
+
+.courses {
+	display: flex;
+	flex-direction: column;
+	gap: rem(10px);
+}
+
+.coursesLabel {
+	font-size: rem(12px);
+	font-weight: 600;
+	color: var(--text--muted);
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	margin: 0;
+}
+
+.coursesList {
+	display: flex;
+	flex-wrap: wrap;
+	gap: rem(6px);
+}
+
+.courseBadge {
+	font-size: rem(12px);
+	color: var(--text--secondary);
+	background: var(--glass--bg);
+	border: 1px solid var(--glass--border);
+	padding: rem(4px) rem(10px);
+	border-radius: rem(6px);
+	transition: color 0.2s ease, border-color 0.2s ease;
+
+	&:hover {
+		color: var(--accent--primary);
+		border-color: rgba(0, 212, 255, 0.3);
+	}
+}
+
+.langCard {
+	position: relative;
+	background: var(--glass--bg);
+	backdrop-filter: blur(10px);
+	border: 1px solid var(--glass--border);
+	border-radius: rem(20px);
+	padding: rem(24px);
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	gap: rem(20px);
+	transition: border-color 0.3s ease;
+
+	&:hover {
+		border-color: var(--border--primary);
+	}
+}
+
+.langItem {
+	display: flex;
+	flex-direction: column;
+	gap: rem(8px);
+}
+
+.langHeader {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.langName {
+	font-size: rem(15px);
+	font-weight: 600;
+	color: var(--text--primary);
+}
+
+.langRight {
+	display: flex;
+	align-items: center;
+	gap: rem(8px);
+}
+
+.langLevel {
+	font-size: rem(13px);
+	color: var(--text--secondary);
+}
+
+.langProf {
+	font-family: 'JetBrains Mono', monospace;
+	font-size: rem(12px);
+	color: var(--accent--primary);
+	background: rgba(0, 212, 255, 0.08);
+	border: 1px solid rgba(0, 212, 255, 0.2);
+	padding: rem(2px) rem(8px);
+	border-radius: rem(100px);
+}
+
+.langBar {
+	height: rem(4px);
+	background: var(--glass--border);
+	border-radius: rem(2px);
+	overflow: hidden;
+}
+
+.langFill {
+	height: 100%;
+	background: var(--accent--gradient);
+	border-radius: rem(2px);
+}
+
+.certsTimeline {
+	display: flex;
+	flex-direction: column;
+	gap: 0;
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		left: rem(16px);
+		top: rem(16px);
+		bottom: rem(16px);
+		width: rem(2px);
+		background: linear-gradient(to bottom, var(--accent--primary), var(--accent--secondary));
+		opacity: 0.3;
+	}
+}
+
+.certItem {
+	display: flex;
+	align-items: flex-start;
+	gap: rem(20px);
+	padding: rem(8px) 0;
+}
+
+.certDot {
+	flex-shrink: 0;
+	width: rem(32px);
+	height: rem(32px);
+	border-radius: 50%;
+	background: var(--accent--gradient);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	position: relative;
+	z-index: 1;
+	box-shadow: 0 0 15px rgba(0, 212, 255, 0.25);
+}
+
+.certCard {
+	position: relative;
+	flex: 1;
+	background: var(--glass--bg);
+	backdrop-filter: blur(10px);
+	border: 1px solid var(--glass--border);
+	border-radius: rem(14px);
+	padding: rem(14px) rem(16px);
+	overflow: hidden;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+	&:hover {
+		border-color: rgba(0, 212, 255, 0.3);
+		box-shadow: 0 4px 20px rgba(0, 212, 255, 0.08);
+	}
+}
+
+.certName {
+	font-size: rem(15px);
+	font-weight: 600;
+	color: var(--text--primary);
+	margin-bottom: rem(6px);
+}
+
+.certDate {
+	display: flex;
+	align-items: center;
+	gap: rem(5px);
+	font-size: rem(12px);
+	color: var(--text--muted);
+}
