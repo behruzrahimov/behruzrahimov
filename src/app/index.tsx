@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 
 import Home from '@pages/index';
+import { ScrollBackground } from '@ui/scroll-background';
 
 import { Layout } from '../layout';
 
@@ -12,8 +13,11 @@ export default function App() {
 	}, []);
 
 	return (
-		<Layout>
-			<Home />
-		</Layout>
+		<>
+			<ScrollBackground />
+			<Layout>
+				<Home />
+			</Layout>
+		</>
 	);
 }

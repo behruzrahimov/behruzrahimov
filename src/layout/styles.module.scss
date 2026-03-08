@@ -3,26 +3,8 @@
 .layout {
 	min-height: 100vh;
 	width: 100%;
+}
 
-	@include respond-to('mobile') {
-		padding: rem(20px);
-	}
-
-	@include respond-to('tablet') {
-		padding: rem(22px);
-	}
-
-	@include respond-to('desktop') {
-		max-width: rem(1200px);
-		padding: rem(24px);
-	}
-
-	@include respond-to('large-desktop') {
-		max-width: rem(1268px);
-		padding: rem(24px);
-	}
-
-	.main {
-		width: 100%;
-	}
+.main {
+	width: 100%;
 }

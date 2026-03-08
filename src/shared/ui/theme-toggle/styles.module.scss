@@ -1,0 +1,22 @@
+@use '@scss/abstracts' as *;
+
+.toggle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: rem(42px);
+	height: rem(42px);
+	border-radius: 50%;
+	border: 1px solid var(--glass--border);
+	background: var(--glass--bg);
+	backdrop-filter: blur(10px);
+	color: var(--text--primary);
+	cursor: pointer;
+	transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+
+	&:hover {
+		border-color: var(--accent--primary);
+		box-shadow: 0 0 15px var(--accent--glow);
+		color: var(--accent--primary);
+	}
+}

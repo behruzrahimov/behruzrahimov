@@ -1,15 +1,55 @@
 .theme-dark {
-	--neutral--800: #1b1f24;
-	--neutral--400: #c3cad5;
-	--neutral--100: white;
-	--neutral--500: #8895aa;
-	--neutral--700: #2d343f;
-	--neutral--300: #e4e7ec;
+	--neutral--800: #0a0a1a;
+	--neutral--750: #0f0f23;
+	--neutral--700: #1a1a2e;
+	--neutral--650: #16213e;
+	--neutral--600: #1e1e3a;
+	--neutral--500: #2a2a4a;
+	--neutral--400: #a0a0b0;
+	--neutral--300: #c8c8d8;
+	--neutral--200: #e0e0f0;
+	--neutral--100: #ffffff;
+
+	--accent--primary: #00d4ff;
+	--accent--secondary: #7c3aed;
+	--accent--gradient: linear-gradient(135deg, #00d4ff, #7c3aed);
+	--accent--gradient-text: linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%);
+	--accent--glow: rgba(0, 212, 255, 0.3);
+	--accent--glow-purple: rgba(124, 58, 237, 0.3);
+
+	--glass--bg: rgba(255, 255, 255, 0.05);
+	--glass--border: rgba(255, 255, 255, 0.1);
+	--glass--bg-hover: rgba(255, 255, 255, 0.08);
+
+	--text--primary: #ffffff;
+	--text--secondary: #a0a0b0;
+	--text--muted: #6b6b8a;
+
+	--border--subtle: rgba(255, 255, 255, 0.08);
+	--border--primary: rgba(0, 212, 255, 0.3);
+
+	--shadow--card: 0 8px 32px rgba(0, 0, 0, 0.4);
+	--shadow--glow: 0 0 30px rgba(0, 212, 255, 0.2);
+	--shadow--glow-purple: 0 0 30px rgba(124, 58, 237, 0.2);
+
+	// Legacy vars kept for compatibility
+	--neutral--800-legacy: #1b1f24;
+	--neutral--400-legacy: #c3cad5;
+	--neutral--500-legacy: #8895aa;
 	--general--shadow-01: #14142b0f;
-	--neutral--600: #5d6c83;
-	--accent--primary-1: #075fe4;
-	--secondary--color-1: #2e81ff;
-	--neutral--200: #f0f2f4;
+	--accent--primary-1: #00d4ff;
+	--secondary--color-1: #7c3aed;
+	--general--shadow-02: #14142b14;
+	--general--shadow-03: #14142b1a;
+	--general--shadow-04: #14142b24;
+	--general--shadow-05: #14142b29;
+	--general--shadow-06: #14142b3d;
+	--button-shadow--color-01: #4a3aff0f;
+	--button-shadow--color-2: #3a8fff14;
+	--button-shadow--color-03: #3a8fff14;
+	--button-shadow--white-01: #14142b0a;
+	--button-shadow--white-02: #14142b0f;
+	--button-shadow--white-03: #14142b1a;
 	--system--green-400: #11845b;
 	--system--blue-400: #086cd9;
 	--system--blue-300: #1d88fe;
@@ -26,15 +66,4 @@
 	--system--orange-300: #ff9e2c;
 	--system--orange-200: #ffd19b;
 	--system--orange-100: #fff3e4;
-	--general--shadow-02: #14142b14;
-	--general--shadow-03: #14142b1a;
-	--general--shadow-04: #14142b24;
-	--general--shadow-05: #14142b29;
-	--general--shadow-06: #14142b3d;
-	--button-shadow--color-01: #4a3aff0f;
-	--button-shadow--color-2: #3a8fff14;
-	--button-shadow--color-03: #3a8fff14;
-	--button-shadow--white-01: #14142b0a;
-	--button-shadow--white-02: #14142b0f;
-	--button-shadow--white-03: #14142b1a;
 }

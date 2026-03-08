@@ -19,22 +19,26 @@
 @mixin respond-to($breakpoint) {
 	@if $breakpoint == 'mobile' {
 		@media only screen and (max-width: 767px) {
-			// Mobile: up to 767px
 			@content;
 		}
 	} @else if $breakpoint == 'tablet' {
 		@media only screen and (min-width: 768px) and (max-width: 1000px) {
-			// Tablet: 768px to 1023px
 			@content;
 		}
 	} @else if $breakpoint == 'desktop' {
 		@media only screen and (min-width: 1001px) and (max-width: 1439px) {
-			// Desktop: 1024px to 1439px
 			@content;
 		}
 	} @else if $breakpoint == 'large-desktop' {
 		@media only screen and (min-width: 1440px) {
-			// Large Desktop: 1440px and above
+			@content;
+		}
+	} @else if $breakpoint == 'max-tablet' {
+		@media only screen and (max-width: 1000px) {
+			@content;
+		}
+	} @else if $breakpoint == 'min-tablet' {
+		@media only screen and (min-width: 768px) {
 			@content;
 		}
 	}
@@ -45,4 +49,24 @@
 	font-weight: $font-weight;
 	line-height: $line-height;
 	text-decoration-skip-ink: none;
+}
+
+@mixin glass-card() {
+	background: var(--glass--bg);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	border: 1px solid var(--glass--border);
+	border-radius: 16px;
+}
+
+@mixin gradient-text() {
+	background: var(--accent--gradient-text);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+@mixin glow-border() {
+	border: 1px solid var(--border--primary);
+	box-shadow: var(--shadow--glow);
 }

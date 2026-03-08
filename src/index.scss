@@ -1,4 +1,6 @@
 @use '@scss/abstracts' as *;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
 *,
 *::before,
 *::after {
@@ -15,22 +17,68 @@ html {
 
 body {
 	background-color: var(--neutral--800);
-	color: var(--neutral--100);
-	font-family: $font-family-primary;
+	color: var(--text--primary);
+	font-family: 'Inter', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow-x: hidden;
+	transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 #root {
 	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	min-height: 100vh;
 }
 
 p {
-	margin-bottom: 20px;
+	margin-bottom: 0;
 	font-size: rem(16px);
+	color: var(--text--secondary);
+	line-height: 1.7;
 }
 
 a {
 	text-decoration: none;
+	color: inherit;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+button {
+	font-family: 'Inter', sans-serif;
+}
+
+::-webkit-scrollbar {
+	width: 6px;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--neutral--800);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--accent--primary);
+	border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: var(--accent--secondary);
+}
+
+::selection {
+	background: var(--accent--primary);
+	color: var(--neutral--800);
+}
+
+// Section anchor offset for fixed header
+section[id] {
+	scroll-margin-top: 80px;
 }
